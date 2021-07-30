@@ -1,0 +1,55 @@
+package seleniumbasics;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+
+public class automationproject 
+{
+
+	public static void main(String[] args) throws InterruptedException 
+	{
+		System.setProperty("webdriver.chrome.driver","C:\\selenium web driver\\chromedriver\\chromedriver.exe");
+        WebDriver driver=new ChromeDriver();
+        driver.get("https://www.justdial.com/sideMenu");
+        System.out.println("Launching website");
+        driver.manage().window().maximize();
+        System.out.println("Maximize the window");
+        Thread.sleep(600);
+        JavascriptExecutor js=(JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,2000)");
+        System.out.println("shop online");
+        driver.findElement(By.xpath("//span[@id='hotkeys_text_54']")).click();
+        Thread.sleep(600);
+        js.executeScript("window.scrollBy(0,100)");
+        System.out.println("order mobile phone");
+        driver.findElement(By.xpath("//span[contains(text(),'Make your pick from a wide range of smartphones av')]")).click();
+        Thread.sleep(600);
+        js.executeScript("window.scrollBy(0,400)");
+        System.out.println("select samsung ");
+        driver.findElement(By.xpath("//*[@id=\"mnintrnlbnr\"]/ul[1]/li[9]/a/span[3]")).click();
+        Thread.sleep(600);
+        js.executeScript("window.scrollBy(0,200)");
+        System.out.println("select phone price from 10,000-20,000");
+        driver.findElement(By.xpath("//li[@id='3']//input[@id='103']")).click();
+        Thread.sleep(600);
+        js.executeScript("window.scrollBy(0,100)");
+        System.out.println("choosing samsung galaxy M31");
+        driver.findElement(By.xpath("/html/body/article/section/section/div[2]/div[8]/div[2]/a/div/div[2]")).click();
+        Thread.sleep(500);
+        js.executeScript("window.scrollBy(0,500)");       
+        System.out.println("select the seller");
+        driver.findElement(By.xpath("//*[@id=\"buy_B07DJCJBBN\"]")).click();
+        driver.close();
+        System.out.println("Closing the browser");
+        driver.quit();
+        System.out.println("Quit the browser");
+        
+        
+        
+        
+        
